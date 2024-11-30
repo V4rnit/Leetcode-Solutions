@@ -1,0 +1,26 @@
+Two Pointers 
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function(nums) {
+    let l = 0;
+    let r = nums.length - 1;
+    let arr = new Array();
+    let index = nums.length -1;
+    while (l <= r){
+        let lsq = nums[l] * nums[l];
+        let rsq = nums[r] * nums[r];
+        if (lsq > rsq){
+            arr[index] = lsq;
+            l++;
+        }
+        else {
+            arr[index] = rsq;
+            r--;
+        }
+        index--;
+    }
+    return arr;
+    
+};
